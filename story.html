@@ -1,0 +1,223 @@
+<html>
+    <head> <title>Class Activity 1</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+        <link rel="icon" type="image/x-icon" href="Logo_last.png">
+      
+        <style>
+          
+          #storydiv { 
+                height: 100%;
+                position: relative;         
+              }
+                      
+            #storydiv p {
+                margin: 0;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+            }
+            
+            .maindiv{
+                border:5px ridge rgb(12, 96, 206);
+                margin:1%;
+                border-radius:20px
+            }
+
+            p{
+                font-size:30px;
+                font-weight: bold;
+            }
+
+           
+
+            #nextbtn, #backbtn, #newbtn{
+                width: 25%;
+                font-size:20px;
+                margin-right: 5%;
+                position: relative;
+                
+            }
+
+            #backbtn, #newbtn{
+                display:none;
+            }
+
+            #family{
+                width:95%;
+                height:95%;
+            }
+
+            #about{
+                font-weight: bold;
+                font-size:40px;
+                color:rgb(7, 7, 89)
+            }
+
+            #story{ 
+                font-size: 1.5vw;
+                border-radius: 20px;
+            }
+
+            #imgdiv{
+                position:relative;
+            }
+            .table,th,td{
+            border: 2px solid black;
+            border-collapse: collapse;
+            font-size: 17px;
+        }
+        th,td{
+            padding: 12px;
+            text-align: center;
+        }
+         th{
+            color: red;
+
+         }
+        
+        </style>
+</head>
+
+    <body> 
+        <div class="header" style="width:100%; box-shadow:5px 5px 10px rgb(0, 0, 0); padding-bottom:10px;">
+            <img src="Logo.png" width="5%" style="float:left; margin-top:25px;" class="img-responsive">
+            <span> <img src="header.png" width="30%" height="100px" class="img-responsive"></span>
+        </div>
+         <br>
+        <br>
+        
+        <center>
+            <h2 id="about">Macavity: The Mystery Cat</h2>
+            <div class="maindiv container-fluid" style="height:60%;">
+               <div class="col-lg-6 col-md-6 col-sm-6 col-xs-11 imgdiv">
+                   <img id="family" src="intro.jpg" style="width:100%;"> 
+               </div>
+               <div class="col-lg-6 col-md-6 col-sm-6 col-xs-11" id='storydiv'>
+                   <p id="story" style="text-align:left; width:100%;"> 
+
+                    The English Language has some <u>indispensable linkers</u>. They are called <span style="background-color: aquamarine; padding: 2px;">Conjunctions</span>. Conjunctions perform the following functions in a sentence:<br> 1. Join words<br>2. Join phrases<br>3. Join parts of sentences<br>4. Join Clauses<br><br>Today we will take a close look at the following types of linkers and their uses:<br>1. Coordinating Conjunctions<br>2. Correlative Conjunctions                                 
+                </p> 
+            </div>
+        </center>     
+        </div>
+        <br>
+        <div class="" style="text-align:center;">
+            
+            <button id="backbtn" onclick="backpic()" class="btn btn-success">Back</button>
+            <button id="nextbtn" onclick="update()" class="btn btn-success">Continue</button>
+            <button id="newbtn" onclick="newpage()" class="btn btn-success">Next</button>
+           
+                  
+        </div>
+     
+        </center>   
+
+        <script>
+
+            var images = ["Assets/1.jpg", "Assets/2.jpg", "Assets/3.jpg", "Assets/4.jpg", "Assets/5.jpg", "Assets/6.jpg","Assets/7.jpg","Assets/8.jpg","Assets/9.jpg","Assets/10.jpg","Assets/11.jpg","Assets/12.jpg","Assets/13.jpg","Assets/14.jpg","Assets/15.jpg","Assets/16.jpg","Assets/17.jpg","Assets/18.jpg","Assets/19.jpg","Assets/20.jpg","Assets/21.jpg","Assets/22.jpg","Assets/23.jpg","Assets/24.jpg","Assets/25.jpg"];
+
+            var para=[ "In the two cases discussed above “For” behaves like a glue sticking together parts of a longer sentence.<br><br>“For” is thus a coordinating conjunction.<span style='color:blue'><u> Coordinating conjunctions are words that join  together words, phrases, or clauses of equal importance.</u></span>",
+
+                       "<span style='color:blue'>'And'</span> in line 4 of the second stanza joins the clauses “<i>His powers of levitation would make a fakir stare</i>” of line 3 and “<i>when you reach the scene of crime—Macavity's not there!</i>” of line 4.<br><br>“And” is adding the clauses together for the sake of extra information. “And” is an example of a coordinating conjunction.",
+
+                       "<span style='color:red'>STANZA 3</span><br><br>Macavity's a ginger cat, he's very tall <span style='color:blue'>and</span> thin;<br>You would know him if you saw him, <span style='color:blue'>for</span> his eyes are sunken in.<br>His brow is deeply lined with thought, his head is highly domed;<br>His coat is dusty from neglect, his whiskers are uncombed.<br>He sways his head from side to side, with movements like a snake;<br><span style='color:blue'>And</span> when you think he's half asleep, he's always wide awake.", 
+
+                       "<ul><li><span style='color:blue'>“And”</span> in the last line of the third stanza joins the clauses “<i>He sways his head from side to side, with movements like a snake;</i>” of line 5 and “<i>when you think he's half asleep, he's always wide awake</i>” of the last line.</li></ul>",
+
+                       "<ul><li>The first line of stanza four tells the readers that there is no one like Macavity. The following provides the reason: “<i>he's a fiend in feline shape, a monster of depravity,</i>” connected by the conjunction “for.</li>”<li>“But” in the last line of stanza four is used to denote the contrast in the facts related to Macavity’s visibility after and before a crime. <i>Both pieces of information about Macavity are of equal importance, together bringing about the strange, mysterious nature of Macavity.</i>“But” is an example of a coordinating conjunction </li></ul>",
+
+                       "<span style='color:blue'>And</span> is used two times in stanza five. In both cases it is used to ‘accumulate’ more information about Macavity or it can be said that ‘And’ is used to provide additional information about Mcavity. These pieces of information gives the reader a detailed knowledge about the whereabouts of Macavity making him a really mysterious character.",
+
+                       "The fifth stanza presents a series of crime scenes in which the detectives of Scotland Yard could not find Macavity and catch him red-handed. Consequently Macavity’s footprints could not be found in any file of  Scotland Yard.  The various cases separated by <span style='color:blue'>or</span> are ‘the jewel-case is rifled’, ‘ when the milk is missing’, ‘another Peke's been stifled’,<br>‘the greenhouse glass is broken’, and ‘the trellis past repair’.<span style='color:blue'>Or</span> is a coordinating conjunction which acts like a glue holding the possibility of two or more different choices together in a sentence.",
+
+                       "In stanza six, the conjunctions “And”, “Or” and “But” perform the same function as they did in the poem till stanza five.",
+
+                       "In stanza seven, the conjunction “And”performs the same function as they did in the poem till stanza six. “And” is an example of a coordinating conjunction. As mentioned earlier, ‘and’ interlinks two supportive objects or ideas. Moreover, they add one statement to another for the sake of extra information. ",
+
+                       "We found the following common coordinating conjunctions in the poem “Macavity: The Mystery Cat” by poet T.S.Eliot:<br><br>1)And 2)But 3)For 4) Or <br><br>‘Nor’, ‘Yet’ and ‘So’ are the three more common coordinating conjunctions widely used in spoken and written English. Apart from these seven we will also come across a few more coordinating conjunctions and correlative conjunctions in our discussion ahead.",
+
+                       "<span style='color:brown'>ACRONYM FOR COORDINATING CONJUNCTIONS:</span><br>It might seem difficult to remember all the coordinating conjunctions. Thus, it is advised to use an interesting acronym <span style='color:blue'>FANBOYS</span> to remember the most common coordinating conjunctions:<br>F: For<br>A:And<br>N: Nor <br>B:But<br>O:Or<br>Y:Yet<br>S: So",
+
+                       "The sentences below show the uses of “And”.<ul><li>Sara went out and hurried to college.</li><li>Davis went to the market, and Peter did the dishes.</li><li>Ana is extremely intelligent and clever.</li></ul><br> A few more examples of cumulative coordinating conjunctions are: <ul><li>As well as and  Also </li></ul>",
+
+                       "<span style='color:blue'>Alternative Coordinating Conjunctions</span> link two contrasting situations where choice is possible. “Or” and “Nor” are alternative coordinating conjunctions. Let us look at the sentences below for better clarity: <ol><li>We can either paint or dance.</li><li>Neither can she wait nor can she leave.</li></ol><br>A few more examples of alternative coordinating conjunctions are: <ul><li>Either, Neither, Else, Otherwise</li></ul>",
+
+                       "<span style='color:blue'>Illative coordinating conjunctions</span> are used in sentences where the first phrase refers to the second phrase. They demonstrate inferences/results and influence of one part of the sentence on the other.  “So” and “For” are illative coordinating conjunctions:<br><ol><li>She left <i>for</i> a short ride.</li><li>Rory works hard <i>so</i> that she can get excellent grades.</li></ol>",                      
+
+                        " 3. It is optimal to use a comma before a coordinating conjunction which acts as a linker to connect various items in a list.<br><br>For example: Today my mother made pasta, potato fries, veg burger, <i>and</i> cheese cakes.",
+
+                       "Let us look at the sentences below for better clarity:<br><br><ol><li>Roger wants either a hoodie or a coat.</li><li>Neither will I go on vacation, nor will I take a day off.</li><li>They will visit both their grandparents and their uncles.</li><li>Tell him whether they want to stay back or go for a walk.</li><li>Sara is not only polite but also kind.</li><li>Harry’s friends are not in the mood for a movie but the trip.</li><li>There are as many flowers in the vase as can fit.</li></ol>",
+
+                       "<span style='color:red; font-size:5rem'>RULES FOR USING CORRELATIVE CONJUNCTION: =></span>",
+                       
+                       "Since correlative conjunctions have connected two phrases in the above example, a comma is not needed. Let's rearrange the sentence.<br><br><ul><li>He not only likes to play cricket, but he also likes football.</li></ul><br>Two independent clauses have emerged after rearranging the sentence.  A comma is crucial here."
+                    ]
+            
+
+
+
+                    var i = -1;
+            function update(){
+                i++
+                document.getElementById("backbtn").style.display="inline-block"
+                if(i > para.length-1){
+                    document.getElementById("nextbtn").style.display="none"
+                    document.getElementById("newbtn").style.display="inline-block"
+                    document.getElementById("family").src = "";
+                    document.getElementById("story").style.borderLeftStyle="solid"
+                    document.getElementById("story").style.borderLeftColor="rgb(164, 246, 229)"
+                    document.getElementById("about").innerHTML = "Macavity: The Mystery Cat";
+                    document.getElementById("story").innerHTML = " <span style='color:red'>Rule 2:</span><br><br> A double negative should not be used while using the pair neither/nor. <u>The sentence below shows incorrect use of correlative conjunctions</u>:<br><br><ul><li>She didn’t like neither milk nor milkshakes</li></ul>" 
+
+                    
+                }
+                else{
+                    document.getElementById("story").style.fontSize="1.5vw"
+                    document.getElementById("story").style.backgroundColor="white"
+                    document.getElementById("about").innerHTML="Macavity: The Mystery Cat"
+                     var updated_image = images[i]; 
+                var newpara =para[i];
+                document.getElementById("family").src = updated_image;
+                document.getElementById("story").innerHTML = newpara;
+              
+            }
+            };
+
+          
+
+            function backpic(){
+                i=i-1
+                console.log(i)
+
+                if(i<0){
+                    document.getElementById("story").style.fontSize="1.35vw"
+                    document.getElementById("backbtn").style.display="none"
+                    document.getElementById("nextbtn").style.display="inline-block"
+                    document.getElementById("family").src = "intro.jpg";
+                    document.getElementById("about").innerHTML="Macavity: The Mystery Cat"
+                    document.getElementById("story").innerHTML = "<p id='story' style='text-align:left; width:100%;'>The English Language has some <u>indispensable linkers</u>. They are called <span style='background-color: aquamarine; padding: 3px;'>Conjunctions</span>. Conjunctions perform the following functions in a sentence:<br> 1. Join words<br>2. Join phrases<br>3. Join parts of sentences<br>4. Join Clauses<br><br>Today we will take a close look at the following types of linkers and their uses:<br>1. Coordinating Conjunctions<br>2. Correlative Conjunctions<br>"
+                }
+                else{
+                document.getElementById("story").style.fontSize="1.5vw"
+                document.getElementById("story").style.backgroundColor="white"
+                document.getElementById("nextbtn").style.display="inline-block"
+                document.getElementById("about").innerHTML="Macavity: The Mystery Cat"
+                var updated_image = images[i]; 
+                var newpara =para[i];
+                document.getElementById("family").src = updated_image;
+                document.getElementById("story").innerHTML = newpara;
+                }
+            }
+
+    
+    </script>
+        
+    </body>
+</html>
